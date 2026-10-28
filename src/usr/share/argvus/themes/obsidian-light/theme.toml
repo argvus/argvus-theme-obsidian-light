@@ -1,0 +1,103 @@
+# ARGVUS theme manifest (schema 2).
+#
+# This file is the whole theme. When the theme is applied, every component of
+# the desktop (taskbar, Control Panel, Hyprland, launcher, notifications, lock
+# screen, terminal, btop, yazi, Qt and GTK apps...) renders its own files from
+# the palette below, for the Sticky and the Float layouts alike.
+#
+# Check it at any time with `make check`, and try it on your desktop with
+# `make try`. See README.md for the whole workflow.
+schema = 2
+
+# The theme ID: lowercase letters, digits and single hyphens, equal to the name
+# of this directory, and never ending in "-float" (Float is a layout, not a
+# theme). It becomes the package name: argvus-theme-<id>.
+id = "obsidian-light"
+
+# The name shown in the theme menu and in the Control Center.
+name = "Obsidian Light"
+
+# "dark" or "light": the menu category, and the GTK and Qt colour scheme.
+category = "light"
+
+# The wallpaper the theme shows. The package installs it from
+# src/usr/share/backgrounds/argvus/; replace the placeholder with your own image.
+wallpaper = "/usr/share/backgrounds/argvus/abstract/light/obsidian-light-abstract-light.jxl"
+
+[name_i18n]
+en-US = "Obsidian Light"
+pt-BR = "Obsidian Light"
+
+[palette]
+# Required: the background, the text and the highlight colour. A colour is
+# "#RGB", "#RRGGBB" or "#RRGGBBAA".
+bg = "#E1E2DF"
+fg = "#191D2B"
+accent = "#334A78"
+
+# Launcher (Rofi) selected row: its background and its text.
+launcher_row_selected = "#27192A"
+launcher_fg_selected = "#FFFFFF"
+
+# No window shadow on this theme, focused or not.
+hypr_shadow_color = "#00000000"
+hypr_shadow_color_inactive = "#00000000"
+
+# Every other colour of the desktop has a default derived from the three
+# above. Uncomment and set a token only to change it; an entry is a colour or
+# an expression over other entries, written "@name | filter(...)".
+#
+# Semantic colours (errors, success, warnings):
+# danger = "#E06C75"
+# ok = "#98C379"
+# warn = "#E5C07B"
+#
+# Text shades:
+# fg_dim = "@fg | mix(@bg, 0.25)"
+# fg_subtle = "@fg | mix(@bg, 0.45)"
+# fg_faint = "@bg | mix(@fg, 0.4)"
+#
+# Surfaces of the panels and their borders:
+# bg_panel = "@bg | alpha(0.814)"
+# bg_card = "@bg | mix(@fg, 0.05) | alpha(0.814)"
+# bg_card_alt = "@bg | mix(@fg, 0.08) | alpha(0.814)"
+# bg_header = "@bg | mix(@fg, 0.11) | alpha(0.814)"
+# border_subtle = "@bg | mix(@fg, 0.2)"
+#
+# Filters: alpha(0..1), mix(@other, 0..1), lighten(0..1), darken(0..1) and
+# contrast (black or white, whichever reads on the colour). The full list of
+# tokens is in the [palette] tables of /usr/share/argvus/theme/consumers.d/.
+
+# The 16 terminal colours (black, red, green, yellow, blue, magenta, cyan,
+# white, then their bright versions). overrides/terminal.conf reads them; an
+# entry may be an expression too, such as "@accent".
+[ansi]
+color0 = "#2A2E3A"
+color1 = "#A8413F"
+color2 = "#4E7A4A"
+color3 = "#8A6E2F"
+color4 = "#34568A"
+color5 = "#6E4A7A"
+color6 = "#3F6E72"
+color7 = "#8A8E89"
+color8 = "#6B6E6A"
+color9 = "#B94A48"
+color10 = "#5A8A52"
+color11 = "#8F6F25"
+color12 = "#4C6EA8"
+color13 = "#8A5F9C"
+color14 = "#3F7A7E"
+color15 = "#3E4350"
+
+# Optional: GTK colour scheme, when it should differ from the category:
+# "prefer-dark", "prefer-light" or "default".
+# [gtk]
+# scheme = "prefer-dark"
+
+# Files of this theme for some components, used instead of the component's
+# template when the palette is not enough. Paths are relative to this
+# directory, and each file is a template like the component's own
+# (/usr/share/argvus/<component>/theme-template/). Keys are the consumer IDs of
+# /usr/share/argvus/theme/consumers.d/. The terminal one adds the ANSI colours.
+[overrides]
+terminal = "overrides/terminal.conf"

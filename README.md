@@ -1,6 +1,6 @@
 # Obsidian Light theme for ARGVUS
 
-ARGVUS Light theme, `obsidian-light`, with its Sticky and Float layouts.
+ARGVUS Light theme, `obsidian-light`, with its Sticky and Spaced layouts.
 
 ## Theme identity
 
